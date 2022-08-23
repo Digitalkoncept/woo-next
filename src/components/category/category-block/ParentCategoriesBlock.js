@@ -13,5 +13,5 @@ const ParentCategoriesBlock = ( props ) => {
 	)
 
 };
-
+ 
 export default ParentCategoriesBlock;

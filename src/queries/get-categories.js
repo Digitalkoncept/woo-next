@@ -6,16 +6,22 @@ import { gql } from "@apollo/client";
 const GET_CATEGORIES_QUERY = gql`query {
 
 	productCategories(first: 3) {
-		nodes {
-			id
-			name
-			slug
-			image {
-				sourceUrl
-				altText
-			}
-		}
-	}
+    nodes {
+      id
+      name
+      slug
+      products {
+        edges {
+          node {
+            image {
+              altText
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
 	
 }`;
 

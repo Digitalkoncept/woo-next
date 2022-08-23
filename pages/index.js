@@ -6,7 +6,7 @@ import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories
 import HeroCarousel from "../src/components/home/hero-carousel";
 
 export default function Home (props) {
-
+console.log(props.productCategories);
 	const { products, productCategories, heroCarousel } = props || {};
 
 	return (
