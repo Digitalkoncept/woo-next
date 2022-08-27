@@ -119,9 +119,9 @@ const getStripeLineItems = (products) => {
         return {
             quantity: product?.qty ?? 0,
             name: product?.name ?? '',
-            images: [product?.image?.sourceUrl ?? ''],
+            // images: [product?.image?.sourceUrl ?? ''],
             price: Math.round(product?.price * 100),
-            currency: 'usd',
+            // currency: 'usd',
         }
     })
 }
