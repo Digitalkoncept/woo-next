@@ -20,7 +20,9 @@ const Layout = (props) => {
             <title>Woocommerce React Theme</title>
           </Head>
           <Header />
+          <main>
           {props.children}
+          </main> 
           <Footer />
         </div>
       </ApolloProvider>
