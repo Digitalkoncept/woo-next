@@ -71,7 +71,7 @@ const Forms = () => {
             
           </Stack>
           <br/>
-          <button class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-4075ia" tabindex="0" type="button" mt="2">SAVE CHANGES<span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+          <button className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-4075ia" tabindex="0" type="button" mt="2">SAVE CHANGES<span className="MuiTouchRipple-root css-w0pj6f"></span></button>
         </BaseCard>
       </Grid>
     </Grid>
