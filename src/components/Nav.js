@@ -58,9 +58,9 @@ const Nav = () => {
 					{!loggedIn ? 	(<>
 					<div className="text-sm font-medium">
 					<Link href="/log-in">
-					<button type="button" class="text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium  text-sm px-6 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2">
+					<Button type="button" className="text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium  text-sm px-6 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2">
 						Log In
-						</button>
+						</Button>
 					</Link>
 					<Link href="/sign-up">
 						<a className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10">
