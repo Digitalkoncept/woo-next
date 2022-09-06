@@ -1,4 +1,5 @@
 import { useMutation, gql } from "@apollo/client";
+import { Button } from "@mui/material";
 
 const CREATE_POST = gql`
   mutation createPost($title: String!, $content: String!) {
@@ -54,9 +55,9 @@ export default function CreatePostForm() {
         {error ? (
           <p className="error-message">{error.message}</p>
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Creating post...' : 'Create post'}
-        </button>
+        </Button>
       </fieldset>
     </form>
   )
