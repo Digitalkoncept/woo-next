@@ -163,7 +163,7 @@ form input:focus {
   border-color: var(--color-yellow-6);
 }
 
-button {
+Button {
   display: block;
   font-weight: 700;
   border: none;
@@ -174,8 +174,8 @@ button {
   cursor: pointer;
 }
 
-button:hover,
-button:active {
+Button:hover,
+Button:active {
   color: var(--color-yellow-2);
 }
 

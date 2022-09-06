@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useMutation, gql } from "@apollo/client";
+import { Button } from "@mui/material";
 
 import { GET_USER } from "../hooks/useAuth";
 
@@ -72,9 +73,9 @@ export default function LogInForm() {
         {!isPasswordValid ? (
           <p className="error-message">Invalid password. Please try again.</p>
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Logging in...' : 'Log in'}
-        </button>
+        </Button>
       </fieldset>
       <p className="account-sign-up-message">
         Don&#39;t have an account yet?{' '}

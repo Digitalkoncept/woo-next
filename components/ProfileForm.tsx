@@ -1,4 +1,5 @@
 import { useMutation, gql } from "@apollo/client";
+import { Button } from "@mui/material";
 
 import useAuth, { User } from "../hooks/useAuth";
 
@@ -74,9 +75,9 @@ export default function ProfileForm() {
         {error ? (
           <p className="error-message">{error.message}</p>
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Updating...' : 'Update'}
-        </button>
+        </Button>
       </fieldset>
     </form>
   );

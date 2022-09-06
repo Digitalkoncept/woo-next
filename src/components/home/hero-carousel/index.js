@@ -70,13 +70,13 @@ const HeroCarousel = ({heroCarousel}) => {
                         )
                     })
                 }
-                <div className="slider-button">
-                    <button className="focus:outline-none" onClick={nextSlide}>
+                <div className="slider-Button">
+                    <Button className="focus:outline-none" onClick={nextSlide}>
                         <svg width="25px" className="inline-block mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
-                    </button>
-                    <button className="focus:outline-none" onClick={nextSlide}>
+                    </Button>
+                    <Button className="focus:outline-none" onClick={nextSlide}>
                         <svg width="25px" className="inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </button>
+                    </Button>
                 </div>
             </div>
             <div className="banner-content pt-10 sm:pt-0 px-10 sm:w-4/12">

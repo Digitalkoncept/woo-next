@@ -33,7 +33,7 @@ const typography = {
     fontSize: "0.875rem",
     lineHeight: "1.5",
   },
-  button: {
+  Button: {
     textTransform: "none",
     fontWeight: "400",
   },

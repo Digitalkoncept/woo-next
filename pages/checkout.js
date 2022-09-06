@@ -4,6 +4,7 @@ import GET_COUNTRIES from "../src/queries/get-countries";
 import client from "../src/components/ApolloClient";
 import AuthContent from "../components/AuthContent"
 
+
 const Checkout = ({data}) => (
 	<Layout>
 		<AuthContent>

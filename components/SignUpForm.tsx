@@ -1,4 +1,6 @@
 import { useMutation, gql } from "@apollo/client";
+import { Button } from "@mui/material";
+
 import Link from "next/link";
 
 const REGISTER_USER = gql`
@@ -81,9 +83,9 @@ export default function SignUpForm() {
             <p className="error-message">{error.message}</p>
           ))
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Signing up...' : 'Sign up'}
-        </button>
+        </Button>
       </fieldset>
       <p>
         Already have an account? <Link href="/log-in"><a>Log in</a></Link>

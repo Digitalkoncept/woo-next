@@ -1,5 +1,5 @@
 import { useMutation, gql } from "@apollo/client";
-
+import { Button } from "@mui/material";
 const SEND_PASSWORD_RESET_EMAIL = gql`
   mutation sendPasswordResetEmail($username: String!) {
     sendPasswordResetEmail(
@@ -55,9 +55,9 @@ export default function SendPasswordResetEmailForm() {
         {error ? (
           <p className="error-message">{error.message}</p>
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Sending...' : 'Send password reset email'}
-        </button>
+        </Button>
       </fieldset>
     </form>
   );

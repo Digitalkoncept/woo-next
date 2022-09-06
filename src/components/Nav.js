@@ -19,11 +19,11 @@ const Nav = () => {
 					</span>
 				</div>
 
-				{/*Menu button*/}
+				{/*Menu Button*/}
 				<div className="block lg:hidden">
-					<button onClick={() => setMenuVisibility(! isMenuVisible)} className="flex items-center px-3 py-2 border rounded text-white border-black hover:text-white hover:border-black">
+					<Button onClick={() => setMenuVisibility(! isMenuVisible)} className="flex items-center px-3 py-2 border rounded text-white border-black hover:text-white hover:border-black">
 					<svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-					</button>
+					</Button>
 				</div>
 
 				{/*MMenu in mobile*/}
@@ -58,7 +58,7 @@ const Nav = () => {
 					{!loggedIn ? 	(<>
 					<div className="text-sm font-medium">
 					<Link href="/log-in">
-					<Button type="button" className="text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium  text-sm px-6 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2">
+					<Button type="Button" className="text-gray-900 bg-gray-100 hover:bg-gray-200  focus:outline-none focus:ring-gray-100 font-medium  text-sm px-6 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 mr-2 mb-2">
 						Log In
 						</Button>
 					</Link>

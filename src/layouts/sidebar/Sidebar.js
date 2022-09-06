@@ -45,7 +45,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
               <NextLink href={item.href}>
                 <ListItem
                   onClick={() => handleClick(index)}
-                  button
+                  Button
                   selected={location === item.href}
                   sx={{
                     mb: 1,

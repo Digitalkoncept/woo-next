@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
+import { Button } from "@mui/material";
+
 import Link from "next/link";
 
 const RESET_PASSWORD = gql`
@@ -106,9 +108,9 @@ export default function SetPasswordForm({ resetKey: key, login }: Props) {
         {error ? (
           <p className="error-message">{error.message}</p>
         ) : null}
-        <button type="submit" disabled={loading}>
+        <Button type="submit" disabled={loading}>
           {loading ? 'Saving...' : 'Save password'}
-        </button>
+        </Button>
       </fieldset>
     </form>
   );

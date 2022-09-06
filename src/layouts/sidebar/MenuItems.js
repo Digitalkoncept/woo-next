@@ -7,7 +7,7 @@ const Menuitems = [
   {
     title: "Buttons",
     icon: "disc",
-    href: "/buttons",
+    href: "/Buttons",
   },
   {
     title: "Account Details",

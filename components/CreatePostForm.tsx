@@ -1,6 +1,7 @@
 import { useMutation, gql } from "@apollo/client";
 import { Button } from "@mui/material";
 
+
 const CREATE_POST = gql`
   mutation createPost($title: String!, $content: String!) {
     createPost(input: {

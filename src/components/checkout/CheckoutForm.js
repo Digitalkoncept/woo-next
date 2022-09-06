@@ -262,7 +262,7 @@ const CheckoutForm = ({countriesData}) => {
                             <PaymentModes input={input} handleOnChange={handleOnChange}/>
 
                             <div className="woo-next-place-order-btn-wrap mt-5">
-                                <button
+                                <Button
                                     disabled={isOrderProcessing}
                                     className={cx(
                                         'bg-purple-600 text-white px-5 py-3 rounded-sm w-auto xl:w-full',
@@ -271,7 +271,7 @@ const CheckoutForm = ({countriesData}) => {
                                     type="submit"
                                 >
                                     Place Order
-                                </button>
+                                </Button>
                             </div>
 
                             {/* Checkout Loading*/}

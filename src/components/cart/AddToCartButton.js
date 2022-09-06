@@ -74,7 +74,7 @@ const AddToCart = (props) => {
 						Buy now
                     </a>
                 ) :
-                <button
+                <Button
 					disabled={addToCartLoading}
                     onClick={handleAddToCartClick}
                     className={cx(
@@ -84,14 +84,14 @@ const AddToCart = (props) => {
                     )}
                 >
 					{ addToCartLoading ? 'Adding to cart...' : 'Add to cart' }
-                </button>
+                </Button>
             }
             {showViewCart ? (
                 <Link href="/cart">
-                    <button
+                    <Button
                         className="px-3 py-1 rounded-sm text-sm border-solid border border-current inline-block hover:bg-purple-600 hover:text-white hover:border-purple-600">View
                         Cart
-                    </button>
+                    </Button>
                 </Link>
             ) : ''}
         </div>
