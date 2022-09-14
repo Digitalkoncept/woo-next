@@ -4,7 +4,7 @@ import client from '../src/components/ApolloClient';
 import ParentCategoriesBlock from "../src/components/category/category-block/ParentCategoriesBlock";
 import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories";
 import HeroCarousel from "../src/components/home/hero-carousel";
-
+import Banner from "../components/Banner"
 export default function Home (props) {
 console.log(props.productCategories);
 	const { products, productCategories, heroCarousel } = props || {};
@@ -13,6 +13,8 @@ console.log(props.productCategories);
 			<Layout>
 				{/*Hero Carousel*/}
 				<HeroCarousel heroCarousel={heroCarousel}/>
+				<Banner />
+				
 				{/*Categories*/ }
 				<div className="product-categories-container container mx-auto my-32 px-4 xl:px-0">
 					<h2 className="main-title text-xl mb-5 uppercase"><span className="main-title-inner">Categories</span></h2>

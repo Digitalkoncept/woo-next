@@ -100,18 +100,9 @@ a {
   box-sizing: border-box;
 }
 
-main {
-  margin: 0 auto 4rem;
-  max-width: 1000px;
-  padding: 4rem 1rem 0;
-}
 
-@media (min-width: 850px) {
-  main {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
+
+
 
 .header {
   border-bottom: 2px solid var(--color-gray-9);
@@ -165,12 +156,11 @@ form input:focus {
 
 button {
   display: block;
-  font-weight: 700;
+ 
   border: none;
   /* border-radius: var(--border-radius); */
   padding: 14px 18px;
-  background-color: var(--color-yellow-6);
-  color: var(--color-yellow-3);
+  
   cursor: pointer;
 }
 
