@@ -5,8 +5,7 @@ const Footer = () => (
 		<div className="container mx-auto">
 			<div className="footer-text flex-none md:flex items-center justify-between">
 				<p>© RecPay 2020</p>
-				<p className="text-gray">Learn the latest tech skills</p>
-				<span className="text-gray">Follow on social links to support the work</span>
+			
 			</div>
 			<ul className="social-links mt-8 flex align-center">
 				<li><a href="#" className="fa fa-facebook" target="_blank"><Facebook/></a></li>
