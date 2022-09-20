@@ -4,9 +4,11 @@ import { useState } from 'react';
 import useAuth from '../../hooks/useAuth'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
+import Cart2 from "../../components/Cart2"
 const Nav = () => {
 	const { loggedIn } = useAuth();
 	const [ isMenuVisible, setMenuVisibility ] = useState(false);
+	const [show, setShow] = useState(false);
 
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-gray-900 py-2 px-4">
@@ -17,14 +19,16 @@ const Nav = () => {
 					{! isMenuVisible ? (<GiHamburgerMenu className="text-white text-2xl"/>) : (<AiOutlineClose className="text-white text-2xl"/>)}
 					</button>
 				</div>
-				<div className="flex items-center text-left item-start flex-shrink-0 text-white mr-20 ">
-					<img src="recpaylogo.png" alt="recpay" height={150} width={150} />
+				<div className="flex items-center text-left item-start flex-shrink-0 text-white lg:mr-20 ">
+					<Link href="/">
+					<img src="/recpaylogo.png" className='cursor-pointer' alt="recpay" height={150} width={150} />
+					</Link>
 					<span className="font-semibold text-xl tracking-tight">
 				
 					</span>
 				</div>
 				<div className='lg:hidden'>
-				<CartIcon/>
+				<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)}/>
 				</div>
 				
 
@@ -69,7 +73,7 @@ const Nav = () => {
 							Sign Up
 						</a>
 					</Link>
-					<CartIcon className="item-center " />
+					<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)} className="item-center " />
 					</div>
 					</>):
 					(<>
@@ -82,7 +86,7 @@ const Nav = () => {
 						<svg xmlns="http://www.w3.org/2000/svg" className="hidden lg:block m-auto" fill="none" viewBox="0 0 24 24" width="18" height="auto" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
 							Wishlist
 						</a>
-						<CartIcon/>
+						<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)} />
 						<Link href="/log-out">
 						<a className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10">
 							Log Out
@@ -94,6 +98,7 @@ const Nav = () => {
 				</div>
 
 			</div>
+			<Cart2 show={show} setShow={setShow} />
 		</nav>
 	)
 };

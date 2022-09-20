@@ -6,7 +6,7 @@ import {Cross, Loading} from "../../icons";
 const CartItem = ( {
 	                   item,
 	                   products,
-					   updateCartProcessing,
+					   updateCartProcessing, 
 	                   handleRemoveProductClick,
 	                   updateCart,
                    } ) => {
