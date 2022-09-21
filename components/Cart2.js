@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 import { useMutation, useQuery } from '@apollo/client';
 import UPDATE_CART from "../src/mutations/update-cart";
 import GET_CART from "../src/queries/get-cart";
-import CartItem2 from "./cartitem2"
+import CartItem2 from "./CartItem2"
 import CLEAR_CART_MUTATION from "../src/mutations/clear-cart";
 import Link from "next/link"
 import {isEmpty} from 'lodash'

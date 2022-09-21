@@ -21,9 +21,9 @@ const card = (props) => {
 <div class="  pt-20 cursor-pointer">
 <Link href={`/category/${category?.slug}`}>
   <div class=" bg-white  mx-auto shadow-lg rounded-lg hover:shadow-xl transition duration-200 ">
-    <img class="rounded-t-lg  h-[150px] w-[200px] max-w-sm" src={category?.products?.edges?.[0]?.node?.image?.sourceUrl ?? ''} alt="" />
+    <img class="rounded-t-lg  h-[150px] w-[200px]  max-w-sm" src={category?.products?.edges?.[0]?.node?.image?.sourceUrl ?? ''} alt="" />
     <div class="py-4 px-8">
-      <h1 class="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">{category?.name}</h1>
+      <h1 class="hover:cursor-pointer mt-2 text-gray-900 font-semibold text-xl ">{category?.name.slice(0,10)}</h1>
     
     </div>
   </div>
