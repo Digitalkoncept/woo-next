@@ -32,7 +32,8 @@ const Product = ( props ) => {
 					{/* <div className="product-description mx-3 font-semibold text-sm text-gray-700" dangerouslySetInnerHTML={{ __html: (product?.description)}}/> */}
 					<div className='flex justify-between items-center mx-2 my-2 mt-2'>
 					<Price salesPrice={product?.price} regularPrice={product?.regularPrice}/>
-					<AddToCartButton product={ product }/>
+					
+					<AddToCartButton   product={ product }/>
 					</div>
 				</div>
 

@@ -6,15 +6,16 @@ import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories
 import HeroCarousel from "../src/components/home/hero-carousel";
 import Banner from "../components/Banner"
 import Slider from "../components/Slider"
+import Slideshow from "../components/Slideshow"
 export default function Home (props) {
 console.log(props.productCategories);
-	const { products, productCategories, heroCarousel } = props || {};
+	const { products, productCategories, heroCarousel,show,setShow } = props || {};
 
 	return (
 			<Layout>
 				{/*Hero Carousel*/}
 				<HeroCarousel heroCarousel={heroCarousel}/>
-				<Banner />
+				<Slideshow/>
 				
 				<Slider productCategories={ productCategories}/>
 				{/*Categories*/ }
@@ -27,7 +28,7 @@ console.log(props.productCategories);
 					<h2 className="products-main-title main-title mb-5 text-xl uppercase"><span className="main-title-inner">Products</span></h2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 						{ products.length ? (
-							products.map( product => <Product key={ product.id } product={ product }/> )
+							products.map( product => <Product key={ product.id } show={show} setShow={setShow}  product={ product }/> )
 						) : '' }
 					</div>
 				</div>

@@ -28,7 +28,7 @@ const Nav = () => {
 					</span>
 				</div>
 				<div className='lg:hidden'>
-				<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)}/>
+				<CartIcon show={show} setShow={setShow}/>
 				</div>
 				
 
@@ -73,7 +73,7 @@ const Nav = () => {
 							Sign Up
 						</a>
 					</Link>
-					<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)} className="item-center " />
+			<CartIcon show={show} setShow={setShow}  className="item-center " />
 					</div>
 					</>):
 					(<>

@@ -66,7 +66,7 @@ const AddToCart = (props) => {
     };
 
     return (
-        <div>
+        <div className="flex">
             {/*	Check if its an external product then put its external buy link */}
             {"ExternalProduct" === product.__typename ? (
                     <a href={product?.externalUrl ?? '/'} target="_blank"
@@ -87,12 +87,12 @@ const AddToCart = (props) => {
                 </button>
             }
             {showViewCart ? (
-                <Link href="/cart">
-                    <button
-                        className="px-3 py-1 rounded-sm text-sm border-solid border border-current inline-block hover:bg-purple-600 hover:text-white hover:border-purple-600">View
+                    <Link href="/cart">
+                    <button 
+                        className="px-3 py-1 rounded-sm text-sm border-solid border border-current inline-block text-green-600 duration-500 hover:bg-purple-600 hover:text-white hover:border-purple-600">View
                         Cart
                     </button>
-                </Link>
+                    </Link>
             ) : ''}
         </div>
     );
