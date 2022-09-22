@@ -213,10 +213,7 @@ button:active {
 .react-multi-carousel-dot-list {
   bottom: 0px !important;
 }
-#__next {
-  overflow: scroll;
-  margin-bottom: 40px;
-}
+
 .react-multi-carousel-dot button {
   border-color: grey !important;
 }
