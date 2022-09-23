@@ -40,7 +40,7 @@ const Slideshow = () => {
 		// 			<path d="M512 256L270 42.6v138.2H0v150.6h270v138z" />
 		// 		</svg>
 		// 	</div>
-		// ),
+		// ),update slideshow
 	};
 	return (
 		<div className="py-6 mt-20">
