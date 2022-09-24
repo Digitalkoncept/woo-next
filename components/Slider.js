@@ -50,7 +50,7 @@ const Carousel = (props) => {
   }, []);
 
   return (
-    <div className="hidden lg:block carousel my-12 lg:mx-6 lg:px-10 py-10 mx-auto container bg-white">
+    <div className="hidden lg:block carousel my-12  lg:px-10 py-10 mx-auto container bg-white">
       <h2 className="text-4xl leading-8 font-semibold  text-slate-900">
       Shop by Category
       </h2>

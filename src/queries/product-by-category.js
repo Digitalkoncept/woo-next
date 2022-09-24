@@ -4,7 +4,7 @@ export const PRODUCT_BY_CATEGORY_SLUG = gql` query PRODUCT_BY_CATEGORY_SLUG($slu
 	productCategory(id: $slug, idType: SLUG) {
 	  id
 	  name
-	  products(first: 50) {
+	  products(first: 30) {
 		nodes {
 		  id
 		  productId: databaseId
