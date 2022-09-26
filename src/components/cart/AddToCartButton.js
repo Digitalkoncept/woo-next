@@ -3,16 +3,18 @@ import {useQuery, useMutation} from '@apollo/client';
 import Link from "next/link";
 import {v4} from 'uuid';
 import cx from 'classnames';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {AppContext} from "../context/AppContext";
 import {getFormattedCart} from "../../functions";
 import GET_CART from "../../queries/get-cart";
 import ADD_TO_CART from "../../mutations/add-to-cart";
 
+
 const AddToCart = (props) => {
 
     const {product} = props;
-
+    const {showToastMessage} =props;
     const productQryInput = {
         clientMutationId: v4(), // Generate a unique id.
         productId: product.productId,
@@ -33,6 +35,7 @@ const AddToCart = (props) => {
 
                 // Update cart data in React Context.
                 setCart(updatedCart);
+               
             }
         });
 
@@ -61,8 +64,9 @@ const AddToCart = (props) => {
     });
 
     const handleAddToCartClick = async () => {
+          showToastMessage();
         setRequestError(null);
-        await addToCart();
+        await addToCart();        
     };
 
     return (
@@ -85,6 +89,7 @@ const AddToCart = (props) => {
                 >
 					{ addToCartLoading ? 'Adding to cart...' : 'Add to cart' }
                 </button>
+                
             }
             {showViewCart ? (
                     <Link href="/cart">

@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import Card from "./card";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 // Data
 
-const Carousel = (props) => {
+const Carousell = (props) => {
   const { productCategories } = props || {};
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -102,6 +104,7 @@ const Carousel = (props) => {
         <div
           ref={carousel}
           infinite={true}
+          autoPlay={true}
           className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory space-x-6 touch-pan-x z-0"
         >
           { productCategories.length ? (
@@ -114,4 +117,4 @@ const Carousel = (props) => {
   );
 };
 
-export default Carousel;
+export default Carousell;

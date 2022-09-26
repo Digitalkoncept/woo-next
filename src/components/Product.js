@@ -3,12 +3,21 @@ import AddToCartButton from '../components/cart/AddToCartButton';
 import Price from "./single-product/price";
 import Image from "../image";
 import {DEFAULT_PRODUCT_HOME_IMG_URL} from "../constants/urls";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Product = ( props ) => {
 	const { product } = props;
+	const showToastMessage = () => {
+        toast.success('Product Added Successfully !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+
 	return (
 		// @TODO Need to handle Group products differently.
 		undefined !== product && 'GroupProduct' !== product.__typename ? (
+			
 			<div className="product bg-white mb-5 rounded-md">
 
 
@@ -33,11 +42,12 @@ const Product = ( props ) => {
 					<div className='flex justify-between items-center mx-2 my-2 mt-2'>
 					<Price salesPrice={product?.price} regularPrice={product?.regularPrice}/>
 					
-					<AddToCartButton   product={ product }/>
+					<AddToCartButton   showToastMessage={showToastMessage}   product={ product }/>
 					</div>
 				</div>
-
+				<ToastContainer />
 			</div>
+
 		) : (
 			''
 		)
