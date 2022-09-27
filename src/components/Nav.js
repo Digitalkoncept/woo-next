@@ -105,7 +105,7 @@ const Nav = () => {
 				</div>
 
 			</div>
-			<ToastContainer/>
+			
 			<Cart2 cartRemovetoast={cartRemovetoast} show={show} setShow={setShow} />
 		</nav>
 	)
