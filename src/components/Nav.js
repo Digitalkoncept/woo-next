@@ -5,10 +5,17 @@ import useAuth from '../../hooks/useAuth'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
 import Cart2 from "../../components/Cart2"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Nav = () => {
 	const { loggedIn } = useAuth();
 	const [ isMenuVisible, setMenuVisibility ] = useState(false);
 	const [show, setShow] = useState(false);
+	const cartRemovetoast = () => {
+        toast.error('Product remove Successfully !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
 
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-gray-900 py-2 px-4">
@@ -98,7 +105,8 @@ const Nav = () => {
 				</div>
 
 			</div>
-			<Cart2 show={show} setShow={setShow} />
+			<ToastContainer/>
+			<Cart2 cartRemovetoast={cartRemovetoast} show={show} setShow={setShow} />
 		</nav>
 	)
 };
