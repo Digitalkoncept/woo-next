@@ -9,12 +9,12 @@ import CartItem2 from "./CartItem2"
 import CLEAR_CART_MUTATION from "../src/mutations/clear-cart";
 import Link from "next/link"
 import {isEmpty} from 'lodash'
-function Index(props,{show,setShow}) {
+function Index({show,setShow,cartRemovetoast}) {
 
 
     const [ cart, setCart ] = useContext( AppContext );
 	const [requestError, setRequestError] = useState( null );
-	const 	{cartRemovetoast} = props; 
+	
 
 	// Get Cart Data.
 	const { loading, error, data, refetch } = useQuery( GET_CART, {
@@ -81,6 +81,7 @@ function Index(props,{show,setShow}) {
 					}
 				},
 			} );
+			cartRemovetoast();
 		}
 	};
 
@@ -136,7 +137,6 @@ function Index(props,{show,setShow}) {
 											products={ cart.products }
 											handleRemoveProductClick={ handleRemoveProductClick }
 											updateCart={ updateCart }
-											cartRemovetoast={cartRemovetoast}
                                         />
                                     	) )
                                         ) }

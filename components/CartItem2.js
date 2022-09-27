@@ -9,7 +9,6 @@ const CartItem2 = ( {
 					   updateCartProcessing, 
 	                   handleRemoveProductClick,
 	                   updateCart,
-					   cartRemovetoast
                    } ) => {
 
 	const [productCount, setProductCount] = useState( item.qty );
