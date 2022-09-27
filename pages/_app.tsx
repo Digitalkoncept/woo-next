@@ -17,11 +17,10 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [show, setShow] =  useState(false);
   return (
     <ApolloProvider client={client}>
       <AuthProvider>
-        <Component show={show} setShow={setShow} {...pageProps} />
+        <Component  {...pageProps} />
       </AuthProvider>
     </ApolloProvider>
   );

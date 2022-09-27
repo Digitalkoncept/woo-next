@@ -9,11 +9,12 @@ import CartItem2 from "./CartItem2"
 import CLEAR_CART_MUTATION from "../src/mutations/clear-cart";
 import Link from "next/link"
 import {isEmpty} from 'lodash'
-function Index({show,setShow}) {
+function Index(props,{show,setShow}) {
 
 
     const [ cart, setCart ] = useContext( AppContext );
 	const [requestError, setRequestError] = useState( null );
+	const 	{cartRemovetoast} = props; 
 
 	// Get Cart Data.
 	const { loading, error, data, refetch } = useQuery( GET_CART, {
@@ -113,7 +114,7 @@ function Index({show,setShow}) {
                     </button>
                 </div> */}
                 {show && (
-                    <div className="w-full h-full bg-black bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0" id="chec-div">
+                    <div className="w-full h-full bg-black z-50 bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0" id="chec-div">
                         <div className="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
                             <div className="flex md:flex-row flex-col justify-end" id="cart">
                                 <div className="lg:w-1/2 w-full md:pl-10 pl-4 pr-10 md:pr-4 md:py-12 py-8 bg-white overflow-y-auto overflow-x-hidden h-screen" id="scroll">
@@ -135,6 +136,7 @@ function Index({show,setShow}) {
 											products={ cart.products }
 											handleRemoveProductClick={ handleRemoveProductClick }
 											updateCart={ updateCart }
+											cartRemovetoast={cartRemovetoast}
                                         />
                                     	) )
                                         ) }

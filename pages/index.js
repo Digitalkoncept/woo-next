@@ -1,4 +1,5 @@
 import Layout from "../src/components/Layout";
+import { useState } from "react";
 import Product from "../src/components/Product";
 import client from '../src/components/ApolloClient';
 import ParentCategoriesBlock from "../src/components/category/category-block/ParentCategoriesBlock";
@@ -7,9 +8,23 @@ import HeroCarousel from "../src/components/home/hero-carousel";
 import Banner from "../components/Banner"
 import Slider from "../components/Slider"
 import Slideshow from "../components/Slideshow"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Cart2 from "../components/Cart2"
 export default function Home(props) {
 	console.log(props.productCategories);
-	const { products, productCategories, heroCarousel, show, setShow } = props || {};
+	const { products, productCategories, heroCarousel } = props || {};
+	const [show, setShow] = useState(false);
+	const cartAddedtoast = () => {
+        toast.success('Product Added Successfully !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
+	const cartRemovetoast = () => {
+        toast.error('Product remove Successfully !', {
+            position: toast.POSITION.TOP_RIGHT
+        });
+    };
 
 	return (
 		<Layout>
@@ -64,11 +79,12 @@ export default function Home(props) {
 				<h2 className="products-main-title main-title mb-5 text-xl uppercase"><span className="main-title-inner">Products</span></h2>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
 					{products.length ? (
-						products.slice(0, 8).map(product => <Product key={product.id} show={show} setShow={setShow} product={product} />)
+						products.slice(0, 8).map(product => <Product   cartAddedtoast={cartAddedtoast}  key={product.id} show={show} setShow={setShow} product={product} />)
 					) : ''}
 				</div>
 			</div>
-			
+			<ToastContainer />
+			<Cart2 cartRemovetoast={cartRemovetoast} show={show} setShow={setShow} />
 		</Layout>
 	)
 };

@@ -14,7 +14,8 @@ import ADD_TO_CART from "../../mutations/add-to-cart";
 const AddToCart = (props) => {
 
     const {product} = props;
-    const {showToastMessage} =props;
+    const {cartAddedtoast} =props;
+    const 	{show, setShow} = props; 
     const productQryInput = {
         clientMutationId: v4(), // Generate a unique id.
         productId: product.productId,
@@ -55,6 +56,7 @@ const AddToCart = (props) => {
 
             // 2. Show View Cart Button
             setShowViewCart(true)
+            
         },
         onError: (error) => {
             if (error) {
@@ -64,7 +66,7 @@ const AddToCart = (props) => {
     });
 
     const handleAddToCartClick = async () => {
-          showToastMessage();
+        cartAddedtoast();
         setRequestError(null);
         await addToCart();        
     };
@@ -92,12 +94,12 @@ const AddToCart = (props) => {
                 
             }
             {showViewCart ? (
-                    <Link href="/cart">
-                    <button 
+                   
+                    <button onClick={() => setShow(!show)}
                         className="px-3 py-1 rounded-sm text-sm border-solid border border-current inline-block text-green-600 duration-500 hover:bg-purple-600 hover:text-white hover:border-purple-600">View
                         Cart
                     </button>
-                    </Link>
+                  
             ) : ''}
         </div>
     );
