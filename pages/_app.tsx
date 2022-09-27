@@ -7,8 +7,6 @@ import { AuthProvider } from "../hooks/useAuth";
 import "../styles/globals.css";
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import {useState} from "react"
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 NProgress.configure({ showSpinner: false });

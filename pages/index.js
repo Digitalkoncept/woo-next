@@ -5,7 +5,6 @@ import client from '../src/components/ApolloClient';
 import ParentCategoriesBlock from "../src/components/category/category-block/ParentCategoriesBlock";
 import PRODUCTS_AND_CATEGORIES_QUERY from "../src/queries/product-and-categories";
 import HeroCarousel from "../src/components/home/hero-carousel";
-import Banner from "../components/Banner"
 import Slider from "../components/Slider"
 import Slideshow from "../components/Slideshow"
 import { ToastContainer, toast } from 'react-toastify';
