@@ -4,7 +4,7 @@ import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const Slideshow = () => {
-	//Array of Images
+	//Array of Images  
 	const images = [
         "/images/Image1.jpg",
 		"/images/Image3.jpg",
