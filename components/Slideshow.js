@@ -1,14 +1,26 @@
 import React from "react";
 //These are Third party packages for smooth slideshow
-import { Zoom } from "react-slideshow-image";
+import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const Slideshow = () => {
 	//Array of Images  
 	const images = [
-        "/images/Image1.jpg",
-		"/images/Image3.jpg",
-        "/images/Image2.jpg",
+			{
+			url: 'images/banner-24.png',
+			caption: 'New Winter',
+			caption2:'Collections 2022'
+			},
+			{
+			url: 'images/banner-25.png',
+			caption: 'New Winter',
+			caption2:'Collections 2022'
+			},
+			{
+			url: 'images/banner-26.png',
+			caption: 'New Winter',
+			caption2:'Collections 2022'
+			},
 	];
 
 	//These are custom properties for zoom effect while slide-show
@@ -18,7 +30,8 @@ const Slideshow = () => {
 		duration: 5000,
 		transitionDuration: 500,
 		infinite: true,
-		 prevArrow:false, //(
+		 prevArrow:false,
+		  //(
 		// 	<div className="hidden" style={{ width: "30px", marginRight: "-30px", cursor: "pointer" }}>
 		// 		<svg
 		// 			xmlns="http://www.w3.org/2000/svg"
@@ -43,17 +56,26 @@ const Slideshow = () => {
 		// ),update slideshow
 	};
 	return (
-		<div className="py-6 mt-20">
-			<Zoom {...zoomInProperties}>
-				{images.map((each, index) => (
-					<div key={index} className="flex justify-center w-full h-full">
+		<div className="py-6 lg:mt-8">
+			<Slide >
+				{images.map((item, index) => (
+					<div key={index} className="flex relative justify-center w-full h-[500px]">
 						<img
-							className="w-full h-72 object-cover  rounded-lg shadow-xl"
-							src={each}
+							className="w-full h-[500px] object-cover  md:object-contain  rounded-lg shadow-xl"
+							src={item.url}
 						/>
+						<div className="absolute space-y-3 lg:bottom-24 md:bottom-20 bottom-20  md:px-10 lg:left-20 md:left-10 left-6 px-4 ">
+                <div className="lg:text-6xl leading-3 md:text-2xl text-2xl font-bold  text-black " dangerouslySetInnerHTML={{ __html: item.caption }}>  
+                </div>
+				<div className="lg:text-6xl leading-3 md:text-2xl text-2xl font-bold  text-black " dangerouslySetInnerHTML={{ __html: item.caption2 }}>
+                  
+				  </div>
+                <p className="text-gray-600 text-lg font-bold py-4 italic">there's nothing like trend</p>
+                
+              </div>
 					</div>
 				))}
-			</Zoom>
+			</Slide>
 		</div>
 	);
 };
