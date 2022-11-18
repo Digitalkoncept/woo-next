@@ -80,7 +80,9 @@ const Nav = () => {
 							Sign Up
 						</a>
 					</Link>
-			<CartIcon show={show} setShow={setShow}  className="item-center " />
+					<div className='hidden'>
+					<CartIcon show={show} setShow={setShow}  className="hidden item-center " />
+					</div>
 					</div>
 					</>):
 					(<>
@@ -93,12 +95,14 @@ const Nav = () => {
 						<svg xmlns="http://www.w3.org/2000/svg" className="hidden lg:block m-auto" fill="none" viewBox="0 0 24 24" width="18" height="auto" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
 							Wishlist
 						</a>
-						<CartIcon show={show} setShow={setShow} onClick={() => setShow(!show)} />
+						<div className='hidden lg:inline-block '>
+						<CartIcon    show={show} setShow={setShow} onClick={() => setShow(!show)} />
+						</div>
 						<Link href="/log-out">
 						<a className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-10">
 							Log Out
 						</a>
-					</Link>
+						</Link>
 					</div>
 					</>)}
 

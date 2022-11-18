@@ -10,7 +10,7 @@ export default function UnAuthContent({ children }: { children: ReactNode }) {
   // Navigate authenticated users to Members page.
   useEffect(() => {
     if (!loading && loggedIn) {
-      router.push('/members');
+      router.push('/');
     }
   }, [loggedIn, loading, router]);
 
