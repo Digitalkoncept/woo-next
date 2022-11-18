@@ -1,23 +1,35 @@
 import React from "react";
+import Image from "next/image";
 //These are Third party packages for smooth slideshow
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const Slideshow = () => {
+	const imageKitLoader = ({ src, width, quality }) => {
+		if(src[0] === "/") src = src.slice(1);
+		const params = [`w-${width}`];
+		if (quality) {
+		  params.push(`q-${quality}`);
+		}
+		const paramsString = params.join(",");
+		var urlEndpoint = "https://ik.imagekit.io/rrw4vjgxohv";
+		if(urlEndpoint[urlEndpoint.length-1] === "/") urlEndpoint = urlEndpoint.substring(0, urlEndpoint.length - 1);
+		return `${urlEndpoint}/${src}?tr=${paramsString}`
+	  }
 	//Array of Images  
 	const images = [
 			{
-			url: 'images/banner-24.png',
+			url: 'recpay/banner-24_szWS4pbDF.png',
 			caption: 'New Winter',
 			caption2:'Collections 2022'
 			},
 			{
-			url: 'images/banner-25.png',
+			url: 'recpay/banner-26_9KsrhsrbB.png',
 			caption: 'New Winter',
 			caption2:'Collections 2022'
 			},
 			{
-			url: 'images/banner-26.png',
+			url: 'recpay/banner-25_t19840Uz7.png',
 			caption: 'New Winter',
 			caption2:'Collections 2022'
 			},
@@ -60,9 +72,13 @@ const Slideshow = () => {
 			<Slide >
 				{images.map((item, index) => (
 					<div key={index} className="flex relative justify-center w-full h-[500px]">
-						<img
+						<Image
+							loader={imageKitLoader}
 							className="w-full h-[500px] object-cover  md:object-contain  rounded-lg shadow-xl"
 							src={item.url}
+							alt="Sample image"
+							width={1000}
+							height={500}
 						/>
 						<div className="absolute space-y-3 lg:bottom-24 md:bottom-20 bottom-20  md:px-10 lg:left-20 md:left-10 left-6 px-4 ">
                 <div className="lg:text-6xl leading-3 md:text-2xl text-2xl font-bold  text-black " dangerouslySetInnerHTML={{ __html: item.caption }}>  
