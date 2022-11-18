@@ -5,6 +5,7 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 const Slideshow = () => {
+	//imagekit function
 	const imageKitLoader = ({ src, width, quality }) => {
 		if(src[0] === "/") src = src.slice(1);
 		const params = [`w-${width}`];
