@@ -30,6 +30,7 @@ export default function Home(props) {
 			{/*Hero Carousel*/}
 			<HeroCarousel heroCarousel={heroCarousel} />
 			<Slideshow />
+			{/* slideshow end */}
 
 			
 			{/*Categories*/}
