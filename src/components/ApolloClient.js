@@ -10,8 +10,9 @@ export const middleware = new ApolloLink( ( operation, forward ) => {
 	/**
 	 * If session data exist in local storage, set value as session header.
 	 */
-	const session = ( process.browser ) ?  localStorage.getItem( "woo-session" ) : null;
-
+	// const session = ( process.browser ) ?  localStorage.getItem( "woo-session" ) : null;
+	const isBrowser = typeof window !== "undefined";
+const session = isBrowser ? localStorage.getItem("woo-session") : null;
 	if ( session ) {
 		operation.setContext( ( { headers = {} } ) => ( {
 			headers: {
@@ -30,10 +31,10 @@ export const middleware = new ApolloLink( ( operation, forward ) => {
  * This catches the incoming session token and stores it in localStorage, for future GraphQL requests.
  */
 export const afterware = new ApolloLink( ( operation, forward ) => {
-
+	const isBrowser = typeof window !== "undefined";
 	return forward( operation ).map( response => {
 
-		if ( !process.browser ) {
+		if ( !isBrowser) {
 			return response;
 		}
 
