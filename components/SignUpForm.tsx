@@ -26,7 +26,7 @@ export default function SignUpForm() {
   const [register, { data, loading, error }] = useMutation(REGISTER_USER);
   const wasSignUpSuccessful = Boolean(data?.registerUser?.user?.databaseId);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit (event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const values = Object.fromEntries(data);
@@ -36,17 +36,19 @@ export default function SignUpForm() {
       console.error(error);
     });
   }
-
-  if (wasSignUpSuccessful) {
-    return (
-      <p>
-        Thanks! Check your email – an account confirmation link has been sent to you.
-      </p>
-    )
-  }
+  // if (wasSignUpSuccessful) {
+  //   return (
+  //     <p>
+  //       Thanks! Check your email – an account confirmation link has been sent to you.
+  //     </p>
+  //   )
+  // }
 
   return (
-    <form method="post" onSubmit={handleSubmit}>
+    <form method="post" onSubmit={handleSubmit} className="my-20">
+      {data && data.registerUser && (
+        <p> Thanks! Check your email – an account confirmation link has been sent to you.</p>
+      )}
       <fieldset disabled={loading} aria-busy={loading}>
         <label htmlFor="sign-up-first-name">First name</label>
         <input

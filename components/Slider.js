@@ -103,8 +103,8 @@ const Carousell = (props) => {
         </div>
         <div
           ref={carousel}
-          infinite={true}
-          autoPlay={true}
+          infinite={'true'}
+          autoPlay={'true'}
           className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory space-x-6 touch-pan-x z-0"
         >
           { productCategories.length ? (

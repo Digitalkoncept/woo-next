@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart2 from "../components/Cart2"
 export default function Home(props) {
-	console.log(props.productCategories);
+	
 	const { products, productCategories, heroCarousel } = props || {};
 	const [show, setShow] = useState(false);
 	const cartAddedtoast = () => {

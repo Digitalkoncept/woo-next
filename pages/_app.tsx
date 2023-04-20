@@ -3,7 +3,7 @@ import "../src/styles/main.scss";
 import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../lib/apolloClient";
-import { AuthProvider } from "../hooks/useAuth";
+import { SessionProvider as AuthProvider } from 'next-auth/react';
 import "../styles/globals.css";
 import Router from 'next/router';
 import NProgress from 'nprogress';
@@ -14,10 +14,10 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps,  }: AppProps & { pageProps: { session: any } })  {
   return (
     <ApolloProvider client={client}>
-      <AuthProvider>
+      <AuthProvider session={pageProps.session}>
         <Component  {...pageProps} />
       </AuthProvider>
     </ApolloProvider>

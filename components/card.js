@@ -18,12 +18,12 @@ const card = (props) => {
     </div>
 </div> */}
 
-<div class="  pt-20 cursor-pointer">
+<div className="  pt-20 cursor-pointer">
 <Link href={`/category/${category?.slug}`}>
-  <div class=" bg-white  mx-auto shadow-md  rounded-md hover:shadow-xl transition duration-200 ">
-    <img class="rounded-t-lg  h-[150px] w-[200px]  max-w-sm" src={category?.products?.edges?.[0]?.node?.image?.sourceUrl ?? ''} alt="" />
-    <div class="py-4 px-8">
-      <h1 class="hover:cursor-pointer mt-2 text-gray-900 font-semibold text-xl ">{category?.name.slice(0,10)}</h1>
+  <div className=" bg-white  mx-auto shadow-md  rounded-md hover:shadow-xl transition duration-200 ">
+    <img className="rounded-t-lg  h-[150px] w-[200px]  max-w-sm" src={category?.products?.edges?.[0]?.node?.image?.sourceUrl ?? ''} alt="" />
+    <div className="py-4 px-8">
+      <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-semibold text-xl ">{category?.name.slice(0,10)}</h1>
     
     </div>
   </div>
