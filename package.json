@@ -9,7 +9,7 @@
     "svg": "svgr -d src/components/icons src/components/icons/svgs"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.16",
+    "@apollo/client": "^3.7.12",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^1.0.5",
     "@next-auth/prisma-adapter": "^1.0.5",
